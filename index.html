@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="header">
+
+    </div>
+    <!-- 用立即之行函数解决闭包问题 -->
+    <script>
+        //   function test(){
+        //       var arr=[];
+        //       for(var i=0; i<10; i++){
+        //           (function (j){
+        //             arr[j]=function(){
+        //                 document.write(j+"");
+        //             }
+        //           }(i));
+        //       }
+        //       return arr;
+        //   }
+        //    var myArr=test();
+
+        //    for(var j=0;j<10;j++){
+        //        myArr[j]();
+        //    }
+
+
+
+
+
+
+            // function test(){
+            //     var arr=[];
+            //     for(var i=0;i<10; i++){
+            //         arr[i]=function()
+            //         {
+            //             document.write(i+"| ")
+            //         }
+            //     }           
+            //         return arr
+            // }
+            // var a=test();
+            // for(var j=0; j<a.length;j++){
+            //     a[j]()
+            // }
+
+            function a(){
+                var num =100;
+                function b(){
+                    num++;
+                    var bbb=123;
+                    console.log('a函数是'+num);
+                    console.log('b函数是'+bbb);
+                   
+                }
+                console.log('外面的a是'+num);
+               
+                return b;
+            }
+            var demo=a();
+            demo();
+            demo();
+            a();
+            
+
+
+
+            // function a(){
+            //     var num=100;
+            //     num++;
+            //     console.log('函数里的'+num);
+            //     return a;
+            // }
+                
+            // var demo=a();
+            // a();
+            // demo();
+            // demo();
+            // console.log('函数外的'+demo);
+           
+            // function sayHello2(name) {
+            //     var text = 'Hello ' + name;
+            //     var sayAlert = function() {
+            //     alert(text);
+            //     console.log(text);
+            //     }
+            //     return sayAlert;
+            // }
+ 
+            // var sy = sayHello2('never-online');
+            // sy();
+            
+    </script>
+</body>
+    
+</html>
